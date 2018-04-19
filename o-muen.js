@@ -16,13 +16,13 @@
       xhr = null;
     }
     xhr.onerror = function(e){
-      done({status:0, text: "", data: this.response, error: "Network-Error", headers: [], json: function(){return null;}});
+      done({status: 0, text: "", data: this.response, error: "Network-Error", headers: [], json: function(){return null;}});
     }
     xhr.onabort = function(){
-      done({status:0, text: "", data: this.response, error: "User-Abort", headers: [], json: function(){return null;}});
+      done({status: 0, text: "", data: this.response, error: "User-Abort", headers: [], json: function(){return null;}});
     }    
     xhr.ontimeout = function(){
-      done({status:0, text: "", data: this.response, error: "Time-Out", headers: [], json: function(){return null;}});
+      done({status: 0, text: "", data: this.response, error: "Time-Out", headers: [], json: function(){return null;}});
     }
     xhr.onload = function(){
       var mc = (this.getAllResponseHeaders().replace(/\r/g, "")||"").match(/^([^:]*):(.*)$/igm);
